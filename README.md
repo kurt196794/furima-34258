@@ -28,29 +28,31 @@ Things you may want to cover:
 | Column                | Type   | Options     |
 | --------              | ------ | ----------- |
 | nickname              | string | null: false |
-| email   　            | string | null: false |
-| password　            | string | null: false |
-| password_confirmation | string | null: false |
+| email                 | string | null: false |
+| encrypted_ppassword   | string | null: false |
 | last_name             | string | null: false |
 | first_name            | string | null: false |
 | kana_Last_name        | string | null: false |
 | kana_First name       | string | null: false |
-| age                   | string | null: false |
-| month_of_birth        | string | null: false |
-| date_of_birth         | string | null: false |
+| date                  | string | null: false |
 
 # Association
 - has_many  :item
 - has_many  :sold
-- has_one   :add
 
 # items テーブル
-| Column　　　 | Type       | Options                         |
-| ----------- | ------     | ------------------------------- |
-| name        | string     | null: false                     |
-| user        | references | null: false, foreign_key: true  |
-| price       | string     | null: false                     |
-| Description | text       | null: false                     |
+| Column　　　    | Type       | Options                         |
+| -------------  | ------     | ------------------------------- |
+| name           | string     | null: false                     |
+| user           | references | null: false, foreign_key: true  |
+| price          | string     | null: false                     |
+| Description    | text       | null: false                     |
+| category       | string     | null: false                     |
+| status         | string     | null: false                     |
+| shipping       | string     | null: false                     |
+| delivery_area  | string     | null: false                     |
+| delivery_date  | string     | null: false                     |
+
 
 # Association
 - belongs_to :user
@@ -61,9 +63,6 @@ Things you may want to cover:
 | --------------- | ---------- | ------------------------------ |
 | user            | references | null: false, foreign_key: true |
 | item            | references | null: false, foreign_key: true |
-| credit_number   | string     | null: false                    |
-| expiration_date | string     | null: false                    |
-| credit_code     | string     | null: false                    |
 
 # Association
 - belongs_to :room
@@ -84,5 +83,4 @@ Things you may want to cover:
 | phone_number   | string     | null: false                    |
 
 # Association
-- belongs_to :user
 - belongs_to :sold
