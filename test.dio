@@ -1,13 +1,13 @@
 <mxfile>
     <diagram id="9ZiCEkHV1Ku0HYrWn5Am" name="ページ1">
-        <mxGraphModel dx="642" dy="864" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+        <mxGraphModel dx="513" dy="864" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
                 <mxCell id="66" value="items" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;align=center;fontSize=14;" vertex="1" parent="1">
                     <mxGeometry x="540" y="483" width="160" height="180" as="geometry"/>
                 </mxCell>
-                <mxCell id="67" value="name&#10;price&#10;descriotion&#10;user&#10;category&#10;status&#10;shipping&#10;delivery_area&#10;delivery_date" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" vertex="1" parent="66">
+                <mxCell id="67" value="name&#10;price&#10;descriotion&#10;user&#10;category_id&#10;condition_id&#10;shipping_id&#10;delivery_area_id&#10;delivery_date_id" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" vertex="1" parent="66">
                     <mxGeometry y="26" width="160" height="154" as="geometry"/>
                 </mxCell>
                 <mxCell id="74" value="addres" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=60;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;align=center;fontSize=14;" vertex="1" parent="1">
@@ -19,10 +19,10 @@
                         <mxPoint x="160" y="86" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="124" value="user&lt;br&gt;sold&lt;br&gt;content&lt;br&gt;postal_code&lt;br&gt;prefectures&lt;br&gt;municipalities&lt;br&gt;address&lt;br&gt;building_name&lt;br&gt;phone_number" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;" vertex="1" parent="74">
+                <mxCell id="124" value="user&lt;br&gt;sold&lt;br&gt;content&lt;br&gt;postal_code&lt;br&gt;delivery_area&lt;br&gt;municipalities&lt;br&gt;address&lt;br&gt;building_name&lt;br&gt;phone_number" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;" vertex="1" parent="74">
                     <mxGeometry y="60" width="160" height="120" as="geometry"/>
                 </mxCell>
-                <mxCell id="78" value="sold" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=40;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;align=center;fontSize=14;" vertex="1" parent="1">
+                <mxCell id="78" value="solds" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=40;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;align=center;fontSize=14;" vertex="1" parent="1">
                     <mxGeometry x="230" y="730" width="180" height="70" as="geometry"/>
                 </mxCell>
                 <mxCell id="114" value="user&lt;br&gt;item" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;" vertex="1" parent="78">
