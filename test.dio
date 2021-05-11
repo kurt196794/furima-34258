@@ -1,6 +1,6 @@
 <mxfile>
     <diagram id="9ZiCEkHV1Ku0HYrWn5Am" name="ページ1">
-        <mxGraphModel dx="206" dy="864" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+        <mxGraphModel dx="768" dy="864" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
@@ -19,7 +19,7 @@
                         <mxPoint x="160" y="86" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="124" value="user&lt;br&gt;sold&lt;br&gt;content&lt;br&gt;postal_code&lt;br&gt;delivery_area&lt;br&gt;municipalities&lt;br&gt;address&lt;br&gt;building_name&lt;br&gt;phone_number" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;" vertex="1" parent="74">
+                <mxCell id="124" value="user&lt;br&gt;sold&lt;br&gt;content&lt;br&gt;postal_code&lt;br&gt;delivery_area_id&lt;br&gt;municipalities&lt;br&gt;address&lt;br&gt;building_name&lt;br&gt;phone_number" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;" vertex="1" parent="74">
                     <mxGeometry y="60" width="160" height="120" as="geometry"/>
                 </mxCell>
                 <mxCell id="126" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.218;entryY=1.032;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="78" target="109">
