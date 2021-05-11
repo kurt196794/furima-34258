@@ -47,15 +47,15 @@ Things you may want to cover:
 | user              | references | null: false, foreign_key: true  |
 | price             | integer    | null: false                     |
 | description       | text       | null: false                     |
-| category_id       | string     | null: false                     |
-| condition_id      | string     | null: false                     |
-| shipping_id       | string     | null: false                     |
-| delivery_area_id  | string     | null: false                     |
+| category_id       | integer     | null: false                     |
+| condition_id      | integer    | null: false                     |
+| shipping_id       | integer     | null: false                     |
+| delivery_area_id  | integer     | null: false                     |
 | delivery_date_id  | integer    | null: false                     |
 
 # Association
-- belongs_to :users
-- has_one    :solds
+- belongs_to :user
+- has_one    :sold
 
 # solds テーブル
 | Column          | Type       | Options                        |
@@ -64,9 +64,9 @@ Things you may want to cover:
 | item            | references | null: false, foreign_key: true |
 
 # Association
-- belongs_to :users
-- belongs_to :items
-- has_one    :addresses
+- belongs_to :user
+- belongs_to :item
+- has_one    :address
 
 # addresses テーブル
 | Column         | Type       | Options                        |
@@ -74,11 +74,11 @@ Things you may want to cover:
 | sold           | references | null: false, foreign_key: true |
 | content        | string     | null: false                    |
 | postal_code    | string     | null: false                    |
-| delivery_area  | string     | null: false, foreign_key: true |
+| delivery_area  | integer    | null: false, 　　　　　  　　　　 |
 | municipalities | string     | null: false                    |
 | address        | string     | null: false                    |
-| building_name  | string     | 
+| building_name  | string     |                                |
 | phone_number   | string     | null: false                    |
 
 # Association
-- belongs_to :solds
+- belongs_to :sold
