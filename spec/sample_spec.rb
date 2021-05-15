@@ -1,2 +1,2 @@
-RSpec.describe ""do
+RSpec.describe '' do
 end
