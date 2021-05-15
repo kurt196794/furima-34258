@@ -32,8 +32,8 @@ Things you may want to cover:
 | encrypted_ppassword   | string | null: false                   |
 | last_name             | string | null: false                   |
 | first_name            | string | null: false                   |
-| kana_Last_name        | string | null: false                   |
-| kana_First name       | string | null: false                   |
+| kana_last_name        | string | null: false                   |
+| kana_first_name       | string | null: false                   |
 | birthday              | date   | null: false                   |
 
 # Association
