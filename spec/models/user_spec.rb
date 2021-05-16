@@ -56,35 +56,54 @@ RSpec.describe User, type: :model do
      expect(@user.errors.full_messages).to include("Email is invalid")
    end
  
-   it 'ユーザー本名は、名字と名前がそれぞれ必須であること' do
+   it 'ユーザー本名は、名字が必須であること' do
     @user.first_name = ''
-    @user.last_name = ''
     @user.valid?
     expect(@user.errors.full_messages).to include("First name can't be blank")
-
     end
 
-   it 'ユーザー本名は、全角（漢字・ひらがな・カタカナ）での入力が必須であること' do
+    it 'ユーザー本名は、名前が必須であること' do
+      @user.last_name = ''
+      @user.valid?
+      expect(@user.errors.full_messages).to include("Last name can't be blank")
+      end
+
+   it 'first_nameは、全角（漢字・ひらがな・カタカナ）での入力が必須であること' do
     @user.first_name = 'aa'
-    @user.last_name = 'aa'
     @user.valid?
     expect(@user.errors.full_messages).to include("First name is invalid. Input full-width characters.")
     end
 
-   it 'ユーザー本名のフリガナは、名字と名前がそれぞれ必須であること' do
+    it 'last_nameは、全角（漢字・ひらがな・カタカナ）での入力が必須であること' do
+      @user.last_name = 'aa'
+      @user.valid?
+      expect(@user.errors.full_messages).to include("Last name is invalid. Input full-width characters.")
+      end
+
+   it 'ユーザー本名のフリガナは、名字が必須であること' do
     @user.kana_first_name = ''
-    @user.kana_last_name = ''
     @user.valid?
     expect(@user.errors.full_messages).to include("Kana first name is invalid. Input full-width characters.")
     end
+
+    it 'ユーザー本名のフリガナは、名前が必須であること' do
+      @user.kana_last_name = ''
+      @user.valid?
+      expect(@user.errors.full_messages).to include("Kana last name is invalid. Input full-width characters.")
+      end
   
  
-   it' ユーザー本名のフリガナは、全角（カタカナ）での入力が必須であること' do
+   it' ユーザー本名のフリガナ名字は、全角（カタカナ）での入力が必須であること' do
     @user.kana_first_name = 'kk'
-    @user.kana_last_name = 'll'
     @user.valid?
     expect(@user.errors.full_messages).to include("Kana first name is invalid. Input full-width characters.")
     end
+
+    it' ユーザー本名のフリガナ名前は、全角（カタカナ）での入力が必須であること' do
+      @user.kana_last_name = 'll'
+      @user.valid?
+      expect(@user.errors.full_messages).to include("Kana last name is invalid. Input full-width characters.")
+      end
 
    it'生年月日が必須であること' do
     @user.birthday = ''
