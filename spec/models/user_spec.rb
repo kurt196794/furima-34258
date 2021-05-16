@@ -28,8 +28,8 @@ RSpec.describe User, type: :model do
       expect(@user.errors.full_messages).to include("Password can't be blank")
     end
     it 'パスワードは、6文字以上での入力が必須であること（6文字が入力されていれば、登録が可能なこと）' do
-      @user.password = '12345'
-      @user.password_confirmation = '12345'
+      @user.password = '111aa'
+      @user.password_confirmation = '111aa'
       @user.valid?
       expect(@user.errors.full_messages).to include('Password is too short (minimum is 6 characters)')
     end
@@ -38,14 +38,16 @@ RSpec.describe User, type: :model do
       @user.valid?
       expect(@user.errors.full_messages).to include('Password is invalid')
     end
+
     it 'パスワードは、確認用を含めて2回入力すること' do
-      @user.password = '123456'
-      @user.password_confirmation = '1234567'
+      @user.password_confirmation = ''
       @user.valid?
       expect(@user.errors.full_messages).to include("Password confirmation doesn't match Password")
     end
+
     it 'パスワードとパスワード（確認用）は、値の一致が必須であること' do
-      @user.password_confirmation = ''
+      @user.password = '123456'
+      @user.password_confirmation = '1234567'
       @user.valid?
       expect(@user.errors.full_messages).to include("Password confirmation doesn't match Password")
     end
@@ -83,13 +85,13 @@ RSpec.describe User, type: :model do
    it 'ユーザー本名のフリガナは、名字が必須であること' do
     @user.kana_first_name = ''
     @user.valid?
-    expect(@user.errors.full_messages).to include("Kana first name is invalid. Input full-width characters.")
+    expect(@user.errors.full_messages).to include("Kana first name can't be blank")
     end
 
     it 'ユーザー本名のフリガナは、名前が必須であること' do
       @user.kana_last_name = ''
       @user.valid?
-      expect(@user.errors.full_messages).to include("Kana last name is invalid. Input full-width characters.")
+      expect(@user.errors.full_messages).to include("Kana last name can't be blank")
       end
   
  
