@@ -10,16 +10,20 @@ class Item < ApplicationRecord
     has_one :delivery_area
     has_one :delivery_date
 
-  with_options presence: true do
-    validates :name 
-    validates :user
-    validates :price, inclusion: { in: (300..9999999)}
-    validates :description 
-    validates :category_id, numericality: { other_than: 1 } 
-    validates :condition_id, numericality: { other_than: 1 } 
-    validates :shipping_id, numericality: { other_than: 1 } 
-    validates :delivery_area_id, numericality: { other_than: 1 } 
-    validates :delivery_date_id, numericality: { other_than: 1 } 
-  end
+    with_options presence: true do
+     validates :name 
+     validates :user
+     validates :price, inclusion: { in: (300..9999999)}
+     validates :description 
+     validates :image
+  
+      with_options numericality: { other_than: 1 } do
+        validates :category_id 
+        validates :condition_id 
+        validates :shipping_id
+        validates :delivery_area_id 
+       validates  :delivery_date_id 
+       end
+    end
 
 end
