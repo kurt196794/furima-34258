@@ -67,8 +67,14 @@ RSpec.describe Item, type: :model do
         expect(@item.errors.full_messages).to include("Price can't be blank")
       end
 
-      it'販売価格は、¥300~¥9,999,999の間のみ保存可能であること'do
+      it'販売価格は、¥300以上が保存可能であること'do
       @item.price= 200
+      @item.valid?
+      expect(@item.errors.full_messages).to include("Price is not included in the list")
+      end
+
+      it'販売価格は、¥10000000以上だと保存できないこと'do
+      @item.price= 10000000
       @item.valid?
       expect(@item.errors.full_messages).to include("Price is not included in the list")
       end

@@ -6,9 +6,9 @@ class ItemsController < ApplicationController
 #   @items = item.order("created_at DESC")
   end
 
-  def move_to_index
-    redirect_to action: :index unless user_signed_in?
-  end
+# def move_to_index
+#   redirect_to action: :index unless user_signed_in?
+# end
 
   def  new
     @item = Item.new
