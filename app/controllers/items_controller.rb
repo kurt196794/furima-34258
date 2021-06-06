@@ -1,6 +1,7 @@
 class ItemsController < ApplicationController
   before_action :authenticate_user!, except: [:index,:show]
   before_action :set_item, except: [:index, :new, :create,]
+  before_action :set_item_sold_blank?, only:[:edit,:update,:destroy]
   
   def index
     @items = Item.all.order("created_at DESC")
@@ -19,12 +20,10 @@ class ItemsController < ApplicationController
    end
   
    def edit
-     redirect_to root_path unless current_user.id == @item.user_id
    end
 
   def create
     @item = Item.new(item_params)
-    @item.user = current_user 
     if @item.save
        redirect_to root_path
     else
@@ -43,11 +42,15 @@ class ItemsController < ApplicationController
   private
 
   def item_params
-    params.require(:item).permit(:category_id,:description,:condition_id,:shipping_id,:delivery_area_id,:delivery_date_id,:price,:name,:image)
+    params.require(:item).permit(:category_id,:description,:condition_id,:shipping_id,:delivery_area_id,:delivery_date_id,:price,:name,:image).merge(user_id: current_user.id)
   end
 
   def set_item
     @item = Item.find(params[:id])
+  end
+
+  def set_item_sold_blank?
+    redirect_to root_path unless current_user.id == @item.user_id && @item.sold.blank?
   end
 
 end

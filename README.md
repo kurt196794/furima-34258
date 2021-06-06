@@ -41,7 +41,7 @@ Things you may want to cover:
 - has_many  :solds
 
 # items テーブル
-| Column　　　       | Type       | Options                         |
+| Column          | Type       | Options                         |
 | ----------------  | ------     | ------------------------------- |
 | name              | string     | null: false                     |
 | user              | references | null: false, foreign_key: true  |
@@ -72,9 +72,9 @@ Things you may want to cover:
 | Column           | Type       | Options                        |
 | ---------------- | ---------- | ------------------------------ |
 | sold             | references | null: false, foreign_key: true |
-| content          | string     | null: false                    |
 | postal_code      | string     | null: false                    |
-| delivery_area_id | integer    | null: false  　　　　　  　　　　 |
+| delivery_area_id | integer    | null: false  
+|
 | municipalities   | string     | null: false                    |
 | address          | string     | null: false                    |
 | building_name    | string     |                                |
