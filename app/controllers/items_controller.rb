@@ -1,6 +1,7 @@
 class ItemsController < ApplicationController
   before_action :authenticate_user!, except: [:index,:show]
   before_action :set_item, except: [:index, :new, :create,]
+  before_action :set_item_sold_blank?, only:[:edit,:update,:destroy]
   
   def index
     @items = Item.all.order("created_at DESC")
@@ -19,7 +20,6 @@ class ItemsController < ApplicationController
    end
   
    def edit
-     redirect_to root_path unless current_user.id == @item.user_id && @item.sold.blank?
    end
 
   def create
@@ -48,6 +48,10 @@ class ItemsController < ApplicationController
 
   def set_item
     @item = Item.find(params[:id])
+  end
+
+  def set_item_sold_blank?
+    redirect_to root_path unless current_user.id == @item.user_id && @item.sold.blank?
   end
 
 end
