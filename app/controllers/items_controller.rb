@@ -19,7 +19,7 @@ class ItemsController < ApplicationController
    end
   
    def edit
-     redirect_to root_path unless current_user.id == @item.user_id
+     redirect_to root_path unless current_user.id == @item.user_id && @item.sold.blank?
    end
 
   def create
