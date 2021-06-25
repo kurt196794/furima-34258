@@ -3,8 +3,6 @@ lock "~> 3.16.0"
 
 set :application, "furima-34258"
 
-set :repo_url, "git@example.com:me/my_repo.git"
-
 # どのリポジトリからアプリをpullするかを指定する
 set :repo_url,  'git@github.com:kurt196794/furima-34258.git'
 
